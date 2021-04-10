@@ -22,3 +22,10 @@ docker-compose run frontend npm i
 
 ## 確認
 `http://localhost:3000/` にアクセスしてNuxtの画面が表示されたら成功🎉
+
+# 開発
+## RuboCop
+自動修正を実行する。
+```
+docker-compose exec backend rubocop -A
+```
