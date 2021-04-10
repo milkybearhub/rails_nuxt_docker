@@ -1,22 +1,24 @@
-# app
-
-> 
-
-## Build Setup
-
-```bash
-# install dependencies
-$ npm install
-
-# serve with hot reload at localhost:3000
-$ npm run dev
-
-# build for production and launch server
-$ npm run build
-$ npm run start
-
-# generate static project
-$ npm run generate
+# 環境構築
+Docker image をbuildする。
+```
+docker-compose build
 ```
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+## Rails
+bundle install を実行する。
+```
+docker-compose run backend bundle
+```
+DBを作成する。
+```
+docker-compose exec backend bin/rails db:create
+```
+
+## Nuxt
+npm install を実行する。
+```
+docker-compose run frontend npm i
+```
+
+## 確認
+`http://localhost:3000/` にアクセスしてNuxtの画面が表示されたら成功🎉
