@@ -1,0 +1,64 @@
+require: rubocop-rails
+
+AllCops:
+  TargetRubyVersion: 3.0
+  Exclude:
+    - db/schema.rb
+    - db/migrate/**/*
+    - tmp/**/*
+    - node_modules/**/*
+    - vendor/**/*
+
+# ガード節の後の空行
+Layout/EmptyLineAfterGuardClause:
+  Enabled: false
+
+Layout/HashAlignment:
+  Enabled: false
+
+# クラスの行数が多すぎる
+ClassLength:
+  Enabled: false
+
+# 行が長すぎる
+LineLength:
+  Enabled: false
+
+# メソッドの行数が多すぎる
+MethodLength:
+  Enabled: false
+
+# クラスにコメントを残さない
+Documentation:
+  Enabled: false
+
+# 日本語のコメント
+Style/AsciiComments:
+  Enabled: false
+
+# クラスの名前空間をModuleで作成
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+# Ignore frozen_string_literal: true
+Style/FrozenStringLiteralComment:
+  Exclude:
+    - app/controllers/**/*
+    - db/**/*
+    - spec/**/*
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+Metrics/BlockLength:
+  Exclude:
+    - config/**/*
+    - spec/**/*
+    - lib/**/*
+
+# ==================== Rails =====================
+Rails/FilePath:
+  Enabled: false
+
+Rails/Output:
+  Enabled: false
